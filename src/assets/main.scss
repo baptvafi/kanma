@@ -1,0 +1,228 @@
+body{
+  color: #474b55;
+  background-image: url("../assets/sun-tornado.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+}
+
+.title{
+  text-align: center;
+}
+
+.container{
+  margin: 0em 10em 0em 10em;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: white;
+}
+
+.tickets{
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(231, 231, 231);
+  padding: 1em;
+
+  hr{
+    color: rgba(0,0,0,0.3);
+  }
+
+  .ticket-body{
+    display: grid;
+    grid-template-columns: auto auto;
+  
+    .achat{
+      display: grid;
+      grid-template-columns: 5rem auto;
+      align-content: center;
+    
+      label{
+        align-self: center;
+      }
+    }
+  }
+
+  .ticket-head *{
+    display: inline;
+    margin-right: 1em;
+  }
+}
+
+.input-number{
+  //border: 1px solid rgba(0,0,0,0.175);
+  border: 1px solid #eb7d16;
+  border-radius: 5px;
+  width: fit-content;
+  display: flex;
+
+  input[type=number]{
+    appearance: textfield;
+  }
+
+  input{
+    border: none;
+    width: 2rem;
+    padding: 5px 0px 5px 0px;
+    margin-right: 2px;
+    margin-left: 2px;
+    text-align: center;
+  }
+
+  button{
+    font-weight: bold;
+    width: 2rem;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    background-color: #eb7d16;
+    color: white
+  }
+
+  button:hover{
+    background-color: white;
+    color: #eb7d16;
+    outline: 1px solid #eb7d16;
+  }
+
+  button:last-child{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  button:first-child{
+    font-size: 1.1em;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+
+}
+
+.button-valide{
+  cursor: pointer;
+}
+
+.button-valide{
+  display: block;
+  margin: auto;
+  width: fit-content;
+
+  &.valide{
+    a:before, a:after{
+      content:"Valider";
+    }
+  }
+
+  &.payer{
+    a:before, a:after{
+      content: "Payer";
+    }
+  }
+
+  span{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 1em auto 0px;
+    perspective: 1000px;
+
+    a{
+      font-size: 19px;
+      letter-spacing: 1px;
+      transform-style: preserve-3d;
+      transform: translateZ(-25px);
+      transition: transform .25s;
+    }
+
+    a:before, a:after{
+      position: absolute;
+      //content: "Valider";
+      height: 55px;
+      width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #eb7d16;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+
+    a:before{
+      color: #fff;
+      background: #eb7d16;
+      transform: rotateY(0deg) translateZ(27px);
+      
+    }
+
+    a:after{
+      color: #eb7d16;
+      transform: rotateX(90deg) translateZ(25px);
+    }
+
+    a:hover{
+      transform: translateZ(-25px) rotateX(-90deg);
+    }
+  }
+
+}
+
+.button-retour{
+  width: fit-content;
+  color: white;
+  margin: 1rem;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  
+  &::before{
+    position: absolute;
+    content: "back";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #eb7d16;
+      border-left-width: 3px;
+      border-left-style: solid;
+      border-left-color: rgb(235, 125, 22);
+    background-color: #eb7d16;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 0px 5px 5px 0px;
+    z-index: 10;
+    border-left: none;
+  }
+
+  &::after{
+    content: "";
+    width: 19px;
+    height: 19px;
+    background-color: #eb7d16;
+    border: 3px solid #eb7d16;
+    border-left: 3px solid #eb7d16;
+    position: absolute;
+    transform: rotateZ(45deg) translate(-6px, 10px);
+    border-radius: 5px;
+  }
+
+  &:hover::after, &:hover::before{
+    background-color: white;
+    color: #eb7d16;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 600px){
+
+  .container{
+    margin: 0em 1em 0em 1em;
+  }
+
+  body{
+    align-content: center;
+    display: grid;
+  }
+
+}
